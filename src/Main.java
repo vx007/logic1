@@ -69,5 +69,39 @@ public class Main {
             default:
                 System.out.println("Такого месяца не существует!");
         }
+
+        //Задание 6
+        short age = 19;
+        int salary = 58_000;
+        float limit = 0f;
+        float mult = 1f;
+
+        if (age >= 23) mult = 3f;
+        else mult = 2f;
+
+        if (salary >= 50_000) mult *= 1.2f;
+        if (salary >= 80_000) mult *= 1.5f;
+
+        limit = salary * mult;
+        System.out.println("Мы готовы выдать вам кредитную карту с лимитом " + limit + " рублей");
+
+        //Задание 7
+        int wantedSum = 10_330_000;
+        float paySum;
+        float rate = 10f;
+        boolean isApproved = false;
+
+        if (age < 23) rate += 1f;
+        if (age > 23 && age < 30) rate += 0.5f;
+        if (salary > 80_000) rate -= 0.7f;
+
+        paySum = wantedSum * rate / 100 / 12;
+        if (paySum < (salary / 2) ) isApproved = true;
+
+        System.out.println("Максимальный платеж при ЗП " + salary + " равен " + (salary / 2) + " рублей. " +
+                "Платеж по кредиту " + paySum + " рублей.");
+        if(isApproved) System.out.println("Кредит одобрен ");
+        else System.out.println("Кредит не одобрен");
+
     }
 }
